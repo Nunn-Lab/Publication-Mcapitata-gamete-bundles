@@ -5,7 +5,7 @@ library(dplyr)
 library(vegan)
 
 # NMDS : DDA - Spectral Library
-#read in data
+#read in data - Found in Figure1 directory
 mcap.dat<-read.csv('dda protein abundances pivot.csv', header=T, row.names=1)
 mcap.dat[, 1] <- sapply(mcap.dat[, 1], as.numeric)
 mcap.dat <- na.omit(mcap.dat)
@@ -28,7 +28,7 @@ ordihull(fig.mcap, groups=grps, draw='lines',col='grey75', label=T)
 
 #NMDS : DIA - Spectral Library
 
-#read in data
+#read in data - found in Figure1 directory
 mcap.dat<-read.csv('dia protein abundances revised.csv', header=T, row.names=1)
 mcap.dat[, 1] <- sapply(mcap.dat[, 1], as.numeric)
 mcap.dat <- na.omit(mcap.dat)
