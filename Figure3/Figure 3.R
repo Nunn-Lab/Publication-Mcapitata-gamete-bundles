@@ -4,7 +4,7 @@ library(WGCNA)
 library(ggplot2)
 library(reshape)
 
-#DIA protein abundance data
+#DIA protein abundance data - see Figure1 directory for file
 egg.dat<-read.csv('dia protein abundances revised.csv', header=T, row.names=1)
 
 #log transform data
