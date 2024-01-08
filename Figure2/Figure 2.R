@@ -52,11 +52,17 @@ ordihull(fig.mcap, groups=grps, draw='lines',col='grey75', label=T)
 # NMDS: DDA - Database Search
 
 #read in data
-mcap.dat<-read.csv('combined db file adjnsaf only.csv', header=T, row.names=1)
-mcap.dat[, 1] <- sapply(mcap.dat[, 1], as.numeric)
-mcap.dat <- na.omit(mcap.dat)
+mcap.dat<-read.csv('ABACUS_combinedDB_output.csv', header=T, row.names=1)
+adjnsaf<-select(mcap.dat, contains('ADJNSAF'))
+
+nsaf.uniq<-cbind(adjnsaf, mcap.dat$ALL_NUMPEPSUNIQ)
+twopeps<-subset(nsaf.uniq, select=X2021_01_20_CORALEGGS_10B_23_ADJNSAF:X2021_01_20_CORALEGGS_74NB_20_ADJNSAF, nsaf.uniq[,13]>1)
+
+twopeps$protein<-row.names(twopeps)
+prot.coral<-subset(twopeps, grepl(paste('lcl', collapse="|"), twopeps$protein))
+
 #transpose data
-mcap.t<-as.data.frame(t(mcap.dat))
+mcap.t<-as.data.frame(t(prot.coral[,1:12]))
 
 #log-transform data
 mcap.tra<-data.trans((mcap.t+1), method='log', plot=F)
