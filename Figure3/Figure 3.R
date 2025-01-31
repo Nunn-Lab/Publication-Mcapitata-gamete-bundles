@@ -1,4 +1,4 @@
-#R script for plots in Figure 3
+#R script for WGCNA
 #load libraries
 library(WGCNA)
 library(ggplot2)
