@@ -1,4 +1,4 @@
-#R script for plots in Figure 2
+#R script for NMDS plots
 #load libraries
 source("Biostats.r")
 library(dplyr)
