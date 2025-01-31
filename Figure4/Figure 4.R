@@ -1,4 +1,4 @@
-#R script for plots in Figure 4
+#R script for volcano plot (adult tissue vs. gamete bundle)
 #load libraries
 library(ggplot2)
 
