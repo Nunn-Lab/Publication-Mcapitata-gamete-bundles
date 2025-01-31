@@ -1,4 +1,4 @@
-#R script for plots in Figure 1
+#R script for comparison of workflows
 #load libraries
 library(reshape)
 library(ggplot2)
